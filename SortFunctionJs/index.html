@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Sort Method</title>
+  <meta name="description" content="QuickSort">
+  <meta name="author" content="Shashank Arya">
+
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+
+<style>
+ 
+  h2{
+    text-align:center;
+  }
+</style>
+
+<h1>Sort function JavaScript</h1>
+
+<h3>Custom sort function that works exactly like the javascript sort function. (More or less) :D</h3>
+
+<div><p>the function 'sortIt(list, [conditonal function]); can be called for sorting array of numbers or strings with just 1 arguement, ie the list, while it can be called with another argument function for custom objects.</p>
+
+<p>Eg. for custom object array <code>var objects = [{x:1, y:'xy'},{x:5, y:'cd'},{x:2, y:'mq'}];</code> , you may call the function to sort it on the basis of x.</p>
+
+<p> It goes like: <code>sortIt(objects, function(a, b){ return a.x-b.x;})</code></p>
+<p>Here a and b are two elements of the array. if the function returns -1, the array will keep b at lower index and a at higher index, and vice versa.</p>
+</div>
+
+ <h2>Numbers:</h2>
+
+<div id="resultArray"></div>
+<br />
+<h2>Strings</h2>
+<div id="resultString"></div>
+<br />
+<h2>Objects with x</h2>
+<div id="resultObjx"></div>
+<br />
+<h2>Objects with y</h2>
+<div id="resultObjy"></div>
+<br />
+<h2>Paths with x</h2>
+<div id="resultObj2x"></div>
+<br />
+<h2>Paths with y</h2>
+<div id="resultObj2y"></div>
+<br />
+<h2>Distance</h2>
+<div id="resultObj2dist"></div>
+<br />
+
+
+
+
+  <script src="sort.js"></script>
+</body>
+</html>
