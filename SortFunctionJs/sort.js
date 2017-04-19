@@ -1,4 +1,3 @@
-// To see output open console
 
 var numbers = [13, 99, 69, 73, 16, 97, 0, 42, 14, 27];
 
@@ -74,6 +73,9 @@ var paths = [{
   y: -5
 }];
 
+
+// Recursive function which is called when the condition of >1 is occured.
+ // It recursively swaps the elements untill the condition of >1 fails or index 0 is reached.
 function swapAll(list, i, j, func) {
   if (i < 0) {
     return true;
@@ -87,13 +89,16 @@ function swapAll(list, i, j, func) {
 
 
 
-
+//Swap function- swaps 2 indices in the array as per the parameters.
 function swap(list, startIndex, endIndex) {
   var temp = list[startIndex];
   list[startIndex] = list[endIndex];
   list[endIndex] = temp;
 }
 
+// Main sort function, has 2 parameters. comparefunction is optional in case of array of numbers or strings.
+// If compare function is not given, the function sorts array in ascending order.
+// If given, it sorts as per the compare function.
 function sortIt(list, compareFunction) {
 
   if (compareFunction == undefined) {
@@ -142,7 +147,10 @@ document.getElementById("resultObj2y").innerHTML = JSON.stringify(sortIt(paths.s
 document.getElementById("resultObj2dist").innerHTML = JSON.stringify(sortIt(paths.slice(0), function(a, b){return (((a.x*a.x)+(a.y*a.y))-((b.x*b.x)+b.y*b.y));}));
 
 
- ///Tests 
+ ///Tests
+
+ //Assert function- I am converting actual and expected outputs to string before comparing 
+ // so that it can compare objects and arrays the same way. 
 function assert(expected, actual) {
   if (expected.length !== actual.length) {
     throw new Error('Assertion Failed! Output lengths dont match')
@@ -158,5 +166,5 @@ function assert(expected, actual) {
 assert(JSON.stringify(numbers.sort()), JSON.stringify(sortIt(numbers.slice(0))));
 assert(JSON.stringify(strings.sort()), JSON.stringify(sortIt(strings.slice(0))));
 assert(JSON.stringify(objects.sort(function(a, b){return a.x-b.x;})), JSON.stringify(sortIt(objects, function(a, b){return a.x-b.x;})));
-assert(JSON.stringify(objects.sort(function(a, b){if(a.y>= b.y){return 1;} return -1;})), JSON.stringify(sortIt(objects, function(a, b){if(a.y>= b.y){return 1;} return -1;})));
+assert(JSON.stringify(objects.sort(function(a, b){if(a.y>= b.y){return 1;} return -1;})),JSON.stringify(sortIt(objects, function(a, b){if(a.y>= b.y){return 1;} return -1;})));
   
